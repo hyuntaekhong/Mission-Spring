@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd ">
+	<!-- 방법1 -->
+	<bean class="di.xml.n01.Car" id="car" />	
+	<bean class="di.xml.n01.HankookTire" id="tire" />
+
+	
+	<!-- 방법2 : setter 주입 -->
+	<bean class="di.xml.n01.HankookTire" id="hankook" />
+	<bean class="di.xml.n01.KumhoTire" id="kumho" />
+	
+	<!-- car 객체를 만들고 setter 메소드까지 수행 -->
+	<bean class="di.xml.n01.Car" id="car2" >
+		<property name="tire" ref="kumho" />	
+	</bean>
+</beans>
