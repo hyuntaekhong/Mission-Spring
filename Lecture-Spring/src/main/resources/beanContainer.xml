@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd ">
+	   					   
+	<!-- Hello hello = new Hello()  -->
+	<!-- 클래스명까지 포함한 path, bean 1개당 1개의 객체가 만들어진다. -->
+	<!-- id를 구분자로 사용 -->
+	<bean class="basic.Hello" id="hello" lazy-init="true" />	
+	<bean class="basic.Hello" id="hello2" lazy-init="true" />
+	
+	<bean class="basic.HelloSingle" id="hs" factory-method="getInstance" />
+	<bean class="basic.HelloSingle" id="hs2" factory-method="getInstance" />
+</beans>
